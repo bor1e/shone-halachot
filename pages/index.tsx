@@ -3,7 +3,7 @@ import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
+import { getAllHallachot } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import Post from '../interfaces/post'
@@ -19,18 +19,18 @@ export default function Index({ allPosts }: Props) {
     <>
       <Layout>
         <Head>
-          <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
+          <title>{`שונה הלכה - מנהגי חב"ד`}</title>
         </Head>
         <Container>
           <Intro />
           {heroPost && (
             <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
+              title={heroPost.title.name}
+              // coverImage={heroPost.coverImage}
+              // date={heroPost.date}
+              // author={"Rav Nachshon, Rav Chitrik"}
+              slug={heroPost.number}
+              excerpt={heroPost.questions[0]??""}
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
@@ -41,13 +41,9 @@ export default function Index({ allPosts }: Props) {
 }
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
+  const allPosts = getAllHallachot([
+/*     'title',
+    'number', */
   ])
 
   return {

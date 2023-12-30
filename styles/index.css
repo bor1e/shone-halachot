@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "react-a11y-footnotes/dist/styles.css";
+
+.rtl-grid {
+  direction: rtl;
+}
