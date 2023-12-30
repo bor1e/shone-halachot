@@ -1,20 +1,5 @@
 export const HALACHOT = [
     {
-        "number": "",
-        "dedication": "",
-        "title": {},
-        "questions": [],
-        "body": [
-            "'שונה הלכה - מנהגי חב\"ד'",
-            "שו\"ת הלכה למעשה עפ\"י מנהגי חב\"ד",
-            "הרב מנחם מענדל נחשון והרב חיים אליעזר חיטריק"
-        ],
-        "sources": []
-    },
-    {
-        "number": "1"
-    },
-    {
         "number": "2",
         "title": {
             "sequence": null,

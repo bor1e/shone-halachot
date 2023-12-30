@@ -8,11 +8,10 @@ type Props = {
 const DisqusComments = ({ post } :Props ) => {
   const disqusShortname = "your-disqus-shortname"
   const disqusConfig = {
-    url: "http://localhost:3000/halachot/"+post.number,
-//    url: "https://shone-halacha.vercel.com/halachot/"+post.number,
-    disqus_developer: 1,
+    // url: "http://localhost:3000/halachot/"+post.number,
+   url: "https://shone-halacha.vercel.com/halachot/"+post.number,
     identifier: post.number, // Single post id
-    title: post.title.original // Single post title
+    title: post.title?.original || "todo"// Single post title
   }
   return (
     <div>
