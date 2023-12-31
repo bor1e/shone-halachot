@@ -13,8 +13,8 @@ const NavigateHalacha = ({ number }: Props) =>  {
         (
             <>
                 <Link
-                    as={`/posts/${number}`}
-                    href="/posts/[slug]"
+                    as={`/halachot/${number}`}
+                    href="/halachot/[slug]"
                     className="hover:underline bg-red"
                     >TODO</Link>
             </>
