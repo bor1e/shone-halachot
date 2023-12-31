@@ -83,7 +83,7 @@ export default function Post({ post, morePosts, preview }: Props) {
               <SectionSeparator />
               <PostFooter sources={post.sources} />
               <SectionSeparator />
-              <DisqusComments post={post} />
+              {/* <DisqusComments p/ost={post} /> */}
             </article>
           </>
         )}
