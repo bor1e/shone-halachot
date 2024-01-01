@@ -46,7 +46,7 @@ export default function Post({ post, morePosts, preview }: Props) {
                 {/* <meta property="og:image" content={post.ogImage.url} /> */}
               </Head>
               <PostHeader
-                title={post.title.original + " - " + post.number}
+                title={post.title.original.replace('*', '') + " - " + post.number}
               // coverImage={post.coverImage}
               // date={post.date}
               // author={post.author}
@@ -82,7 +82,7 @@ export default function Post({ post, morePosts, preview }: Props) {
               </div>
               <SectionSeparator />
               <PostFooter sources={post.sources} />
-              <SectionSeparator />
+              {/* <SectionSeparator /> */}
               {/* <DisqusComments p/ost={post} /> */}
             </article>
           </>

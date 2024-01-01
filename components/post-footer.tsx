@@ -9,7 +9,7 @@ const PostFooter = ({ sources }: Props) => {
     <div className="max-w-2xl mx-auto text-right">
         <h1 id="footnotes-label" className="text-2xl mb-5">מקורות</h1>
           {sources.map(({number, content}, index) => (
-            <p key={index} id={`references-${index++}`}><a href={`#ref-${index}`} aria-label={`back to reference ${index}`}  role="doc-backlink" >{number}</a>: {content}</p>
+            <p key={index} id={`references-${index++}`}><a href={`#ref-${index}`} className= "text-amber-500" aria-label={`back to reference ${index}`}  role="doc-backlink" >{number}</a>: {content}</p>
           ))}
     </div>
   )

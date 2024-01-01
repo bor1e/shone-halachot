@@ -12,15 +12,33 @@ const PostBody = ({ content }: Props) => {
     <div className="max-w-2xl mx-auto">
       {content.map((entry) => entry.includes('שאלה:')? <Question content={entry} /> : /*entry.includes('תשובה') ? <Answer content={entry} />  :*/ 
       <p className="my-3">
-         {reactStringReplace(entry, /([⁰¹²³⁴⁵⁶⁷⁸⁹]+)/g, (match, i) => (
-          <a id={`ref-${magic(match)}`} href={`#references-${magic(match)}`} key={`${i}`} aria-describedby="footnotes-label" role="doc-noteref">{match}</a>
-        ))}</p>)}
+         {todo(entry)}
+        </p>
+      )}
     </div>
   )
 }
 
 export default PostBody
 
+
+function todo(x) {
+  return reactStringReplace(x, /([⁰¹²³⁴⁵⁶⁷⁸⁹]+)/g, (match, i) => (
+    <a id={`ref-${magic(match)}`} className= "text-amber-500" href={`#references-${magic(match)}`} key={`${i}`} aria-describedby="footnotes-label" role="doc-noteref">{match}</a>
+  ))
+}
+/*
+function todo2(x) {
+  return reactStringReplace(x, /: '(.*?)'/g, (match, i) => (
+    <span className= "text-stone-400" key="i">: '{match}'</span>
+  ))
+}
+function todo3(x) {
+  return reactStringReplace(x, /\*(.*?)\* /g, (match, i) => (
+  <u>{match}</u>
+  ))
+}
+*/
 function magic(text) {
   let numbers = '';
   for (let i = 0; i < text.length; i++) {
