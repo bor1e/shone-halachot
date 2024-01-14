@@ -6,3 +6,28 @@
 .rtl-grid {
   direction: rtl;
 }
+
+/* styles/HoverLink.module.css */
+.hoverLink {
+  position: relative;
+  text-decoration: none;
+  color: #f59e0b;
+}
+
+.hoverText {
+  display: none;
+  position: absolute;
+  width: fit-content;
+  min-width: 200px;
+  top: 100%;
+  z-index: 1; /* Set a higher z-index value */
+  right: 0;
+  background-color: #f5f5f4;
+  color: #000000;
+  border: 1px solid #f59e0b;
+  border-radius: 4px;
+}
+
+.hoverLink:hover .hoverText {
+  display: flex;
+}

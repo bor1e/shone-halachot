@@ -51,7 +51,7 @@ export default function Post({ post, morePosts, preview }: Props) {
               // date={post.date}
               // author={post.author}
               />
-              <PostBody content={post.body} />
+              <PostBody content={post.body} sources={post.sources} />
               <div className="flex flex-row justify-around p-4">
                 <button
                   className=" bg-black hover:bg-white hover:text-black border border-black text-white font-bold px-4 py-2 rounded-full w-32"
